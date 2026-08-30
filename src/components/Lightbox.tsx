@@ -66,7 +66,9 @@ export function Lightbox({
           <img
             src={artwork.src}
             alt={artwork.title}
-            className="h-full w-full object-contain transition-transform duration-500 ease-out"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none h-full w-full select-none object-contain transition-transform duration-500 ease-out"
             style={{ transform: zoomed ? "scale(2.4)" : "scale(1)", transformOrigin: origin }}
           />
         </div>

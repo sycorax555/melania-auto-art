@@ -311,13 +311,14 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
-        <a href="#top" className="leading-none">
-          <span className="block text-sm font-medium uppercase tracking-[0.35em] md:text-base">
-            London Melania
-          </span>
-          <span className="mt-2 block text-[9px] uppercase tracking-[0.4em] text-silver">
-            Automotive Artist
-          </span>
+        <a href="#top" className="leading-none" aria-label="London Melania Automotive Artist">
+          <img
+            src={logo.url}
+            alt="London Melania Automotive Artist"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none h-8 w-auto select-none md:h-10"
+          />
         </a>
         <nav className="hidden items-center gap-10 md:flex">
           {NAV.map((n) => (
