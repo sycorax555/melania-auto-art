@@ -14,7 +14,7 @@ import h6 from "@/assets/20260829_202919-2.jpg.asset.json";
 
 import studio from "@/assets/artist-studio.jpg.asset.json";
 import logo from "@/assets/lm-logo.png.asset.json";
-import c1 from "@/assets/c1-bugatti.jpg.asset.json";
+import c1 from "@/assets/c1-bugatti-v2.jpg.asset.json";
 import c2 from "@/assets/c2-amggt.jpg.asset.json";
 import c3 from "@/assets/c3-300sl.jpg.asset.json";
 import c4 from "@/assets/c4-250gto.jpg.asset.json";
@@ -48,6 +48,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '36 × 27"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 36 / 27,
   },
   {
     src: c2.url,
@@ -55,6 +56,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '24 × 34"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 24 / 34,
   },
   {
     src: c3.url,
@@ -62,6 +64,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '30 × 24"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 30 / 24,
   },
   {
     src: c4.url,
@@ -69,6 +72,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '48 × 60"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 48 / 60,
   },
   {
     src: c5.url,
@@ -76,6 +80,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '33 × 42"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 33 / 42,
   },
   {
     src: c6.url,
@@ -83,8 +88,10 @@ const COLLECTION: Artwork[] = [
     dimensions: '21 × 15"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 21 / 15,
   },
 ];
+
 
 const NAV = [
   { label: "Collection", href: "#collection" },
@@ -166,39 +173,42 @@ function Index() {
           </h2>
         </Reveal>
 
-        <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-14">
+        <div className="mt-20 grid items-start gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
           {COLLECTION.map((art, i) => (
             <Reveal key={art.title} delay={(i % 3) * 120}>
               <button
                 onClick={() => setActive(art)}
                 className="group block w-full text-left"
               >
-                <div className="relative aspect-4/5 overflow-hidden border border-border">
+                <div
+                  className="relative flex h-[20rem] w-full items-center justify-center overflow-hidden border border-border bg-white/[0.03] p-5 transition-colors duration-700 group-hover:border-silver/60 sm:h-[24rem] lg:h-[26rem]"
+                >
+
                   <img
                     src={art.src}
                     alt={`${art.title}, ${art.medium}`}
                     loading="lazy"
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
-                    className="pointer-events-none h-full w-full select-none object-cover brightness-[0.78] grayscale-[0.35] transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] group-hover:brightness-100 group-hover:grayscale-0"
+                    className="pointer-events-none max-h-full max-w-full select-none object-contain brightness-[0.85] grayscale-[0.25] transition-all duration-[1200ms] ease-out group-hover:brightness-105 group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-transparent p-6 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
-                    <h3 className="text-lg tracking-wide">{art.title}</h3>
-                    <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                      {art.dimensions} · {art.medium}
-                    </p>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-silver">
-                      {art.status}
-                    </p>
-                  </div>
                 </div>
-                <p className="mt-5 text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-                  {art.title}
-                </p>
+                <div className="mt-6 border-t border-border pt-4">
+                  <h3 className="text-[11px] uppercase tracking-[0.3em] text-foreground">
+                    {art.title}
+                  </h3>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                    {art.dimensions} · {art.medium}
+                  </p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-silver">
+                    {art.status}
+                  </p>
+                </div>
               </button>
             </Reveal>
           ))}
         </div>
+
       </section>
 
       {/* ABOUT */}
