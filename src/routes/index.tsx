@@ -121,7 +121,7 @@ function Index() {
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pt-28 text-center md:pt-32">
           <p className="text-[10px] uppercase track-widest-xl text-silver">
             Automotive Fine Art · Est. Private Commissions
           </p>
@@ -131,8 +131,9 @@ function Index() {
             alt="London Melania Automotive Artist"
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
-            className="pointer-events-none mx-auto mt-10 w-[min(90%,34rem)] select-none"
+            className="pointer-events-none mx-auto mt-12 w-[min(90%,34rem)] select-none"
           />
+
           <p className="mx-auto mt-10 max-w-xl text-xs uppercase tracking-[0.32em] text-muted-foreground sm:text-sm">
             Bespoke Oil on Canvas for Distinguished Collectors
           </p>
