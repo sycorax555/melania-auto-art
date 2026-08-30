@@ -112,7 +112,9 @@ function Index() {
             key={src}
             src={src}
             alt="Macro detail of oil paint brushwork on an automotive fine art canvas"
-            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[2000ms] ease-in-out"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover transition-opacity duration-[2000ms] ease-in-out"
             style={{ opacity: i === slide ? 0.55 : 0 }}
           />
         ))}
@@ -122,11 +124,15 @@ function Index() {
           <p className="text-[10px] uppercase track-widest-xl text-silver">
             Automotive Fine Art · Est. Private Commissions
           </p>
-          <h1 className="mt-8 text-4xl leading-[1.1] tracking-wide sm:text-6xl md:text-7xl">
-            London Melania
-            <span className="mt-2 block italic">Automotive Fine Art</span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-xl text-xs uppercase tracking-[0.32em] text-muted-foreground sm:text-sm">
+          <h1 className="sr-only">London Melania — Automotive Fine Art</h1>
+          <img
+            src={logo.url}
+            alt="London Melania Automotive Artist"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none mx-auto mt-10 w-[min(90%,34rem)] select-none"
+          />
+          <p className="mx-auto mt-10 max-w-xl text-xs uppercase tracking-[0.32em] text-muted-foreground sm:text-sm">
             Bespoke Oil on Canvas for Distinguished Collectors
           </p>
           <a
@@ -170,7 +176,9 @@ function Index() {
                     src={art.src}
                     alt={`${art.title}, ${art.medium}`}
                     loading="lazy"
-                    className="h-full w-full object-cover brightness-[0.78] grayscale-[0.35] transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] group-hover:brightness-100 group-hover:grayscale-0"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="pointer-events-none h-full w-full select-none object-cover brightness-[0.78] grayscale-[0.35] transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] group-hover:brightness-100 group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-transparent p-6 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
                     <h3 className="text-lg tracking-wide">{art.title}</h3>
@@ -193,15 +201,17 @@ function Index() {
 
       {/* ABOUT */}
       <section id="about" className="border-t border-border">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 md:grid-cols-2 md:px-12 md:py-40 lg:gap-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-28 md:grid-cols-2 md:px-12 md:py-40 lg:gap-24">
           <Reveal>
             <img
               src={studio.url}
-              alt="London Melania at work in the studio"
+              alt="Portrait of the artist London Melania"
               loading="lazy"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
               width={1024}
               height={1280}
-              className="w-full border border-border object-cover"
+              className="pointer-events-none aspect-4/5 w-full select-none border border-border object-cover"
             />
           </Reveal>
           <Reveal delay={140} className="flex flex-col justify-center">
@@ -211,20 +221,22 @@ function Index() {
             </h2>
             <div className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
-                Every canvas begins in silence — a single vehicle, studied for its line, its
-                proportion, the way light folds across coachwork shaped by hand decades before
-                it was ever photographed. Nothing is printed, traced or digitally assisted.
+                London Melania is a realist painter whose work sits at the intersection of fine
+                art, physics and automotive engineering. Specializing in high-end oil on canvas,
+                Melania employs classical Renaissance Old Master techniques to depict the
+                contrasting world of modern supercars.
               </p>
               <p>
-                Working exclusively in traditional oil media, London Melania builds each work in
-                slow, deliberate layers: thin glazes for depth, impasto for the hard glint of
-                chrome and lacquer. The result is a surface that lives — texture you can read
-                from across a room and detail that rewards closer study.
+                Her paintings possess a striking three-dimensional presence, capturing not only
+                the aesthetic beauty of these vehicles but the precise physics and fluid
+                aerodynamics driving their design.
               </p>
               <p>
-                The intention is singular: to treat automotive engineering as what it has always
-                been — timeless fine art, worthy of the same reverence as any portrait hanging in
-                a private gallery.
+                Driven by a lifelong fascination with speed and mechanical form, Melania seeks to
+                dissolve the modern boundary between art and science. Historically, art,
+                mathematics and physics were treated as unified disciplines; her practice
+                intentionally reunites them, embedding mathematical principles and aerodynamic
+                concepts directly into her visual compositions.
               </p>
             </div>
             <div className="mt-14 grid gap-8 border-t border-border pt-10 sm:grid-cols-3">
