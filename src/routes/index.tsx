@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_SLIDES = [a8.url, a9.url, a2.url, a3.url, a5.url, a7.url];
+const HERO_SLIDES = [h1.url, h2.url, h3.url, h4.url, h5.url, h6.url];
 
 const COLLECTION: Artwork[] = [
   {
