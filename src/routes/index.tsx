@@ -48,6 +48,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '36 × 27"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 36 / 27,
   },
   {
     src: c2.url,
@@ -55,6 +56,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '24 × 34"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 24 / 34,
   },
   {
     src: c3.url,
@@ -62,6 +64,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '30 × 24"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 30 / 24,
   },
   {
     src: c4.url,
@@ -69,6 +72,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '48 × 60"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 48 / 60,
   },
   {
     src: c5.url,
@@ -76,6 +80,7 @@ const COLLECTION: Artwork[] = [
     dimensions: '33 × 42"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 33 / 42,
   },
   {
     src: c6.url,
@@ -83,8 +88,10 @@ const COLLECTION: Artwork[] = [
     dimensions: '21 × 15"',
     medium: "Oil on Canvas",
     status: "Private Collection",
+    ratio: 21 / 15,
   },
 ];
+
 
 const NAV = [
   { label: "Collection", href: "#collection" },
