@@ -173,39 +173,42 @@ function Index() {
           </h2>
         </Reveal>
 
-        <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-14">
+        <div className="mt-20 grid items-start gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
           {COLLECTION.map((art, i) => (
             <Reveal key={art.title} delay={(i % 3) * 120}>
               <button
                 onClick={() => setActive(art)}
                 className="group block w-full text-left"
               >
-                <div className="relative aspect-4/5 overflow-hidden border border-border">
+                <div
+                  className="relative flex w-full items-center justify-center overflow-hidden border border-border bg-white/[0.03] p-4 transition-colors duration-700 group-hover:border-silver/60 sm:p-6"
+                  style={{ aspectRatio: art.ratio ?? 1 }}
+                >
                   <img
                     src={art.src}
                     alt={`${art.title}, ${art.medium}`}
                     loading="lazy"
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
-                    className="pointer-events-none h-full w-full select-none object-cover brightness-[0.78] grayscale-[0.35] transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] group-hover:brightness-100 group-hover:grayscale-0"
+                    className="pointer-events-none max-h-full max-w-full select-none object-contain brightness-[0.85] grayscale-[0.25] transition-all duration-[1200ms] ease-out group-hover:brightness-105 group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-transparent p-6 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
-                    <h3 className="text-lg tracking-wide">{art.title}</h3>
-                    <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                      {art.dimensions} · {art.medium}
-                    </p>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-silver">
-                      {art.status}
-                    </p>
-                  </div>
                 </div>
-                <p className="mt-5 text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-                  {art.title}
-                </p>
+                <div className="mt-6 border-t border-border pt-4">
+                  <h3 className="text-[11px] uppercase tracking-[0.3em] text-foreground">
+                    {art.title}
+                  </h3>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                    {art.dimensions} · {art.medium}
+                  </p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-silver">
+                    {art.status}
+                  </p>
+                </div>
               </button>
             </Reveal>
           ))}
         </div>
+
       </section>
 
       {/* ABOUT */}
