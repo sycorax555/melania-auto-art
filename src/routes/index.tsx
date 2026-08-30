@@ -4,16 +4,21 @@ import { useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Lightbox, type Artwork } from "@/components/Lightbox";
 
-import a1 from "@/assets/20260829_202744.jpg.asset.json";
+
 import a2 from "@/assets/20260829_202748.jpg.asset.json";
 import a3 from "@/assets/20260829_202804.jpg.asset.json";
-import a4 from "@/assets/20260829_202815.jpg.asset.json";
 import a5 from "@/assets/20260829_202823.jpg.asset.json";
-import a6 from "@/assets/20260829_202829.jpg.asset.json";
 import a7 from "@/assets/20260829_202840.jpg.asset.json";
 import a8 from "@/assets/20260829_202912.jpg.asset.json";
 import a9 from "@/assets/20260829_202919.jpg.asset.json";
 import studio from "@/assets/artist-studio.jpg.asset.json";
+import logo from "@/assets/lm-logo.png.asset.json";
+import c1 from "@/assets/c1-bugatti.jpg.asset.json";
+import c2 from "@/assets/c2-amggt.jpg.asset.json";
+import c3 from "@/assets/c3-300sl.jpg.asset.json";
+import c4 from "@/assets/c4-250gto.jpg.asset.json";
+import c5 from "@/assets/c5-laferrari.jpg.asset.json";
+import c6 from "@/assets/c6-redline.jpg.asset.json";
 
 const TITLE = "London Melania — Automotive Fine Art";
 const DESCRIPTION =
@@ -33,50 +38,50 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_SLIDES = [a8.url, a9.url, a2.url, a3.url];
+const HERO_SLIDES = [a8.url, a9.url, a2.url, a3.url, a5.url, a7.url];
 
 const COLLECTION: Artwork[] = [
   {
-    src: a2.url,
-    title: "300 SL — Silver Arrow Nocturne",
-    dimensions: '36 × 48"',
+    src: c1.url,
+    title: "Bugatti Chiron — Bavarian Midnight",
+    dimensions: '36 × 27"',
     medium: "Oil on Canvas",
     status: "Private Collection",
   },
   {
-    src: a1.url,
-    title: "S-SL 190 — Stuttgart Study",
-    dimensions: '24 × 36"',
+    src: c2.url,
+    title: "AMG GT Black Series — Red Shift",
+    dimensions: '24 × 34"',
     medium: "Oil on Canvas",
-    status: "Available",
+    status: "Private Collection",
   },
   {
-    src: a3.url,
-    title: "Rosso Corsa — Aperture I",
+    src: c3.url,
+    title: "Mercedes-Benz 300SL Roadster, 1963",
+    dimensions: '30 × 24"',
+    medium: "Oil on Canvas",
+    status: "Private Collection",
+  },
+  {
+    src: c4.url,
+    title: "Ferrari 250 GTO, 1962",
     dimensions: '48 × 60"',
     medium: "Oil on Canvas",
     status: "Private Collection",
   },
   {
-    src: a9.url,
-    title: "AMG GT — Predator's Gaze",
-    dimensions: '36 × 48"',
-    medium: "Oil on Canvas",
-    status: "Available",
-  },
-  {
-    src: a5.url,
-    title: "Maranello Flank — Study in Crimson",
-    dimensions: '24 × 36"',
+    src: c5.url,
+    title: "Ferrari LaFerrari — Rosso Corsa",
+    dimensions: '33 × 42"',
     medium: "Oil on Canvas",
     status: "Private Collection",
   },
   {
-    src: a7.url,
-    title: "Angel Eyes — Bavarian Midnight",
-    dimensions: '36 × 48"',
+    src: c6.url,
+    title: "Ferrari LaFerrari — Redline",
+    dimensions: '21 × 15"',
     medium: "Oil on Canvas",
-    status: "Available",
+    status: "Private Collection",
   },
 ];
 
@@ -107,7 +112,9 @@ function Index() {
             key={src}
             src={src}
             alt="Macro detail of oil paint brushwork on an automotive fine art canvas"
-            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[2000ms] ease-in-out"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover transition-opacity duration-[2000ms] ease-in-out"
             style={{ opacity: i === slide ? 0.55 : 0 }}
           />
         ))}
@@ -117,11 +124,15 @@ function Index() {
           <p className="text-[10px] uppercase track-widest-xl text-silver">
             Automotive Fine Art · Est. Private Commissions
           </p>
-          <h1 className="mt-8 text-4xl leading-[1.1] tracking-wide sm:text-6xl md:text-7xl">
-            London Melania
-            <span className="mt-2 block italic">Automotive Fine Art</span>
-          </h1>
-          <p className="mx-auto mt-8 max-w-xl text-xs uppercase tracking-[0.32em] text-muted-foreground sm:text-sm">
+          <h1 className="sr-only">London Melania — Automotive Fine Art</h1>
+          <img
+            src={logo.url}
+            alt="London Melania Automotive Artist"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none mx-auto mt-10 w-[min(90%,34rem)] select-none"
+          />
+          <p className="mx-auto mt-10 max-w-xl text-xs uppercase tracking-[0.32em] text-muted-foreground sm:text-sm">
             Bespoke Oil on Canvas for Distinguished Collectors
           </p>
           <a
@@ -165,7 +176,9 @@ function Index() {
                     src={art.src}
                     alt={`${art.title}, ${art.medium}`}
                     loading="lazy"
-                    className="h-full w-full object-cover brightness-[0.78] grayscale-[0.35] transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] group-hover:brightness-100 group-hover:grayscale-0"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="pointer-events-none h-full w-full select-none object-cover brightness-[0.78] grayscale-[0.35] transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] group-hover:brightness-100 group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-transparent p-6 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
                     <h3 className="text-lg tracking-wide">{art.title}</h3>
@@ -188,15 +201,17 @@ function Index() {
 
       {/* ABOUT */}
       <section id="about" className="border-t border-border">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-28 md:grid-cols-2 md:px-12 md:py-40 lg:gap-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-28 md:grid-cols-2 md:px-12 md:py-40 lg:gap-24">
           <Reveal>
             <img
               src={studio.url}
-              alt="London Melania at work in the studio"
+              alt="Portrait of the artist London Melania"
               loading="lazy"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
               width={1024}
               height={1280}
-              className="w-full border border-border object-cover"
+              className="pointer-events-none aspect-4/5 w-full select-none border border-border object-cover"
             />
           </Reveal>
           <Reveal delay={140} className="flex flex-col justify-center">
@@ -206,20 +221,22 @@ function Index() {
             </h2>
             <div className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
-                Every canvas begins in silence — a single vehicle, studied for its line, its
-                proportion, the way light folds across coachwork shaped by hand decades before
-                it was ever photographed. Nothing is printed, traced or digitally assisted.
+                London Melania is a realist painter whose work sits at the intersection of fine
+                art, physics and automotive engineering. Specializing in high-end oil on canvas,
+                Melania employs classical Renaissance Old Master techniques to depict the
+                contrasting world of modern supercars.
               </p>
               <p>
-                Working exclusively in traditional oil media, London Melania builds each work in
-                slow, deliberate layers: thin glazes for depth, impasto for the hard glint of
-                chrome and lacquer. The result is a surface that lives — texture you can read
-                from across a room and detail that rewards closer study.
+                Her paintings possess a striking three-dimensional presence, capturing not only
+                the aesthetic beauty of these vehicles but the precise physics and fluid
+                aerodynamics driving their design.
               </p>
               <p>
-                The intention is singular: to treat automotive engineering as what it has always
-                been — timeless fine art, worthy of the same reverence as any portrait hanging in
-                a private gallery.
+                Driven by a lifelong fascination with speed and mechanical form, Melania seeks to
+                dissolve the modern boundary between art and science. Historically, art,
+                mathematics and physics were treated as unified disciplines; her practice
+                intentionally reunites them, embedding mathematical principles and aerodynamic
+                concepts directly into her visual compositions.
               </p>
             </div>
             <div className="mt-14 grid gap-8 border-t border-border pt-10 sm:grid-cols-3">
@@ -294,13 +311,14 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
-        <a href="#top" className="leading-none">
-          <span className="block text-sm font-medium uppercase tracking-[0.35em] md:text-base">
-            London Melania
-          </span>
-          <span className="mt-2 block text-[9px] uppercase tracking-[0.4em] text-silver">
-            Automotive Artist
-          </span>
+        <a href="#top" className="leading-none" aria-label="London Melania Automotive Artist">
+          <img
+            src={logo.url}
+            alt="London Melania Automotive Artist"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="pointer-events-none h-8 w-auto select-none md:h-10"
+          />
         </a>
         <nav className="hidden items-center gap-10 md:flex">
           {NAV.map((n) => (
