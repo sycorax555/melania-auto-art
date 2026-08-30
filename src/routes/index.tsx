@@ -5,12 +5,13 @@ import { Reveal } from "@/components/Reveal";
 import { Lightbox, type Artwork } from "@/components/Lightbox";
 
 
-import a2 from "@/assets/20260829_202748.jpg.asset.json";
-import a3 from "@/assets/20260829_202804.jpg.asset.json";
-import a5 from "@/assets/20260829_202823.jpg.asset.json";
-import a7 from "@/assets/20260829_202840.jpg.asset.json";
-import a8 from "@/assets/20260829_202912.jpg.asset.json";
-import a9 from "@/assets/20260829_202919.jpg.asset.json";
+import h1 from "@/assets/20260829_202744-2.jpg.asset.json";
+import h2 from "@/assets/20260829_202748-2.jpg.asset.json";
+import h3 from "@/assets/20260829_202804-2.jpg.asset.json";
+import h4 from "@/assets/20260829_202829-2.jpg.asset.json";
+import h5 from "@/assets/20260829_202840-2.jpg.asset.json";
+import h6 from "@/assets/20260829_202919-2.jpg.asset.json";
+
 import studio from "@/assets/artist-studio.jpg.asset.json";
 import logo from "@/assets/lm-logo.png.asset.json";
 import c1 from "@/assets/c1-bugatti.jpg.asset.json";
@@ -38,7 +39,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_SLIDES = [a8.url, a9.url, a2.url, a3.url, a5.url, a7.url];
+const HERO_SLIDES = [h1.url, h2.url, h3.url, h4.url, h5.url, h6.url];
 
 const COLLECTION: Artwork[] = [
   {
@@ -120,7 +121,7 @@ function Index() {
         ))}
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pt-28 text-center md:pt-32">
           <p className="text-[10px] uppercase track-widest-xl text-silver">
             Automotive Fine Art · Est. Private Commissions
           </p>
@@ -130,8 +131,9 @@ function Index() {
             alt="London Melania Automotive Artist"
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
-            className="pointer-events-none mx-auto mt-10 w-[min(90%,34rem)] select-none"
+            className="pointer-events-none mx-auto mt-12 w-[min(90%,34rem)] select-none"
           />
+
           <p className="mx-auto mt-10 max-w-xl text-xs uppercase tracking-[0.32em] text-muted-foreground sm:text-sm">
             Bespoke Oil on Canvas for Distinguished Collectors
           </p>
