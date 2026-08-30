@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Lightbox, type Artwork } from "@/components/Lightbox";
 
-import a1 from "@/assets/20260829_202744.jpg.asset.json";
+
 import a2 from "@/assets/20260829_202748.jpg.asset.json";
 import a3 from "@/assets/20260829_202804.jpg.asset.json";
 import a5 from "@/assets/20260829_202823.jpg.asset.json";
