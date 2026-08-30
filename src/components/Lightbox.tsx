@@ -6,7 +6,9 @@ export type Artwork = {
   dimensions: string;
   medium: string;
   status: string;
+  ratio?: number;
 };
+
 
 export function Lightbox({
   artwork,
