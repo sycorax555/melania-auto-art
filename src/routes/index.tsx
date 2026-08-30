@@ -7,13 +7,18 @@ import { Lightbox, type Artwork } from "@/components/Lightbox";
 import a1 from "@/assets/20260829_202744.jpg.asset.json";
 import a2 from "@/assets/20260829_202748.jpg.asset.json";
 import a3 from "@/assets/20260829_202804.jpg.asset.json";
-import a4 from "@/assets/20260829_202815.jpg.asset.json";
 import a5 from "@/assets/20260829_202823.jpg.asset.json";
-import a6 from "@/assets/20260829_202829.jpg.asset.json";
 import a7 from "@/assets/20260829_202840.jpg.asset.json";
 import a8 from "@/assets/20260829_202912.jpg.asset.json";
 import a9 from "@/assets/20260829_202919.jpg.asset.json";
 import studio from "@/assets/artist-studio.jpg.asset.json";
+import logo from "@/assets/lm-logo.png.asset.json";
+import c1 from "@/assets/c1-bugatti.jpg.asset.json";
+import c2 from "@/assets/c2-amggt.jpg.asset.json";
+import c3 from "@/assets/c3-300sl.jpg.asset.json";
+import c4 from "@/assets/c4-250gto.jpg.asset.json";
+import c5 from "@/assets/c5-laferrari.jpg.asset.json";
+import c6 from "@/assets/c6-redline.jpg.asset.json";
 
 const TITLE = "London Melania — Automotive Fine Art";
 const DESCRIPTION =
@@ -33,50 +38,50 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_SLIDES = [a8.url, a9.url, a2.url, a3.url];
+const HERO_SLIDES = [a8.url, a9.url, a2.url, a3.url, a5.url, a7.url, a1.url];
 
 const COLLECTION: Artwork[] = [
   {
-    src: a2.url,
-    title: "300 SL — Silver Arrow Nocturne",
-    dimensions: '36 × 48"',
+    src: c1.url,
+    title: "Bugatti Chiron — Bavarian Midnight",
+    dimensions: '36 × 27"',
     medium: "Oil on Canvas",
     status: "Private Collection",
   },
   {
-    src: a1.url,
-    title: "S-SL 190 — Stuttgart Study",
-    dimensions: '24 × 36"',
+    src: c2.url,
+    title: "AMG GT Black Series — Red Shift",
+    dimensions: '24 × 34"',
     medium: "Oil on Canvas",
-    status: "Available",
+    status: "Private Collection",
   },
   {
-    src: a3.url,
-    title: "Rosso Corsa — Aperture I",
+    src: c3.url,
+    title: "Mercedes-Benz 300SL Roadster, 1963",
+    dimensions: '30 × 24"',
+    medium: "Oil on Canvas",
+    status: "Private Collection",
+  },
+  {
+    src: c4.url,
+    title: "Ferrari 250 GTO, 1962",
     dimensions: '48 × 60"',
     medium: "Oil on Canvas",
     status: "Private Collection",
   },
   {
-    src: a9.url,
-    title: "AMG GT — Predator's Gaze",
-    dimensions: '36 × 48"',
-    medium: "Oil on Canvas",
-    status: "Available",
-  },
-  {
-    src: a5.url,
-    title: "Maranello Flank — Study in Crimson",
-    dimensions: '24 × 36"',
+    src: c5.url,
+    title: "Ferrari LaFerrari — Rosso Corsa",
+    dimensions: '33 × 42"',
     medium: "Oil on Canvas",
     status: "Private Collection",
   },
   {
-    src: a7.url,
-    title: "Angel Eyes — Bavarian Midnight",
-    dimensions: '36 × 48"',
+    src: c6.url,
+    title: "Ferrari LaFerrari — Redline",
+    dimensions: '21 × 15"',
     medium: "Oil on Canvas",
-    status: "Available",
+    status: "Private Collection",
   },
 ];
 
