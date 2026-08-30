@@ -14,7 +14,7 @@ import h6 from "@/assets/20260829_202919-2.jpg.asset.json";
 
 import studio from "@/assets/artist-studio.jpg.asset.json";
 import logo from "@/assets/lm-logo.png.asset.json";
-import c1 from "@/assets/c1-bugatti.jpg.asset.json";
+import c1 from "@/assets/c1-bugatti-v2.jpg.asset.json";
 import c2 from "@/assets/c2-amggt.jpg.asset.json";
 import c3 from "@/assets/c3-300sl.jpg.asset.json";
 import c4 from "@/assets/c4-250gto.jpg.asset.json";
