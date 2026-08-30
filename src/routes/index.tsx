@@ -181,9 +181,9 @@ function Index() {
                 className="group block w-full text-left"
               >
                 <div
-                  className="relative flex w-full items-center justify-center overflow-hidden border border-border bg-white/[0.03] p-4 transition-colors duration-700 group-hover:border-silver/60 sm:p-6"
-                  style={{ aspectRatio: art.ratio ?? 1 }}
+                  className="relative flex h-[20rem] w-full items-center justify-center overflow-hidden border border-border bg-white/[0.03] p-5 transition-colors duration-700 group-hover:border-silver/60 sm:h-[24rem] lg:h-[26rem]"
                 >
+
                   <img
                     src={art.src}
                     alt={`${art.title}, ${art.medium}`}
