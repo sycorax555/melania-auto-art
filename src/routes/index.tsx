@@ -129,9 +129,6 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background" />
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 pt-28 text-center md:pt-32">
-          <p className="text-[10px] uppercase track-widest-xl text-silver">
-            Automotive Fine Art · Est. Private Commissions
-          </p>
           <h1 className="sr-only">London Melania — Automotive Fine Art</h1>
           <img
             src={logo.url}
@@ -192,6 +189,17 @@ function Index() {
                     onContextMenu={(e) => e.preventDefault()}
                     className="pointer-events-none max-h-full max-w-full select-none object-contain brightness-[0.85] grayscale-[0.25] transition-all duration-[1200ms] ease-out group-hover:brightness-105 group-hover:grayscale-0"
                   />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/85 p-6 text-center opacity-0 backdrop-blur-sm transition-opacity duration-700 group-hover:opacity-100">
+                    <h3 className="text-[11px] uppercase tracking-[0.3em] text-foreground">
+                      {art.title}
+                    </h3>
+                    <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                      {art.dimensions} · {art.medium}
+                    </p>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-silver">
+                      {art.status}
+                    </p>
+                  </div>
                 </div>
                 <div className="mt-6 border-t border-border pt-4">
                   <h3 className="text-[11px] uppercase tracking-[0.3em] text-foreground">
@@ -234,19 +242,19 @@ function Index() {
             <div className="mt-10 space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
                 London Melania is a realist painter whose work sits at the intersection of fine
-                art, physics and automotive engineering. Specializing in high-end oil on canvas,
-                Melania employs classical Renaissance Old Master techniques to depict the
+                art, physics, and automotive engineering. Specializing in high-end oil on canvas,
+                Melania utilizes classical Renaissance Old Master techniques to depict the
                 contrasting world of modern supercars.
               </p>
               <p>
-                Her paintings possess a striking three-dimensional presence, capturing not only
-                the aesthetic beauty of these vehicles but the precise physics and fluid
+                Her paintings possess a striking three-dimensional presence, capturing not just
+                the aesthetic beauty of these vehicles, but the precise physics and fluid
                 aerodynamics driving their design.
               </p>
               <p>
                 Driven by a lifelong fascination with speed and mechanical form, Melania seeks to
                 dissolve the modern boundary between art and science. Historically, art,
-                mathematics and physics were treated as unified disciplines; her practice
+                mathematics, and physics were treated as unified disciplines. Her practice
                 intentionally reunites them, embedding mathematical principles and aerodynamic
                 concepts directly into her visual compositions.
               </p>
