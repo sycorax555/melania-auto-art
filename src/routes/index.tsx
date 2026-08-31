@@ -169,7 +169,7 @@ function Index() {
         <Reveal>
           <SectionLabel>The Collection</SectionLabel>
           <h2 className="mt-6 max-w-2xl text-3xl tracking-wide md:text-5xl">
-            Six curated masterworks in pure oil
+            The Collection
           </h2>
         </Reveal>
 
