@@ -12,7 +12,7 @@ import h4 from "@/assets/20260829_202829-2.jpg.asset.json";
 import h5 from "@/assets/20260829_202840-2.jpg.asset.json";
 import h6 from "@/assets/20260829_202919-2.jpg.asset.json";
 
-import studio from "@/assets/artist-studio.jpg.asset.json";
+import studio from "@/assets/artist-portrait.jpg.asset.json";
 import logo from "@/assets/lm-logo.png.asset.json";
 import c1 from "@/assets/c1-bugatti-v2.jpg.asset.json";
 import c2 from "@/assets/c2-amggt.jpg.asset.json";
@@ -167,9 +167,9 @@ function Index() {
       {/* COLLECTION */}
       <section id="collection" className="mx-auto max-w-7xl px-6 py-28 md:px-12 md:py-40">
         <Reveal>
-          <SectionLabel>The Collection</SectionLabel>
+          <SectionLabel>Selected Works</SectionLabel>
           <h2 className="mt-6 max-w-2xl text-3xl tracking-wide md:text-5xl">
-            Six curated masterworks in pure oil
+            The Collection
           </h2>
         </Reveal>
 
@@ -324,13 +324,12 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
         <a href="#top" className="leading-none" aria-label="London Melania Automotive Artist">
-          <img
-            src={logo.url}
-            alt="London Melania Automotive Artist"
-            draggable={false}
-            onContextMenu={(e) => e.preventDefault()}
-            className="pointer-events-none h-8 w-auto select-none md:h-10"
-          />
+          <span className="block text-[13px] font-semibold uppercase tracking-[0.35em] text-foreground md:text-[15px]">
+            London Melania
+          </span>
+          <span className="mt-1 block text-[9px] uppercase tracking-[0.42em] text-silver">
+            Automotive Artist
+          </span>
         </a>
         <nav className="hidden items-center gap-10 md:flex">
           {NAV.map((n) => (
