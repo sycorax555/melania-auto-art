@@ -167,7 +167,7 @@ function Index() {
       {/* COLLECTION */}
       <section id="collection" className="mx-auto max-w-7xl px-6 py-28 md:px-12 md:py-40">
         <Reveal>
-          <SectionLabel>The Collection</SectionLabel>
+          <SectionLabel>Selected Works</SectionLabel>
           <h2 className="mt-6 max-w-2xl text-3xl tracking-wide md:text-5xl">
             The Collection
           </h2>
